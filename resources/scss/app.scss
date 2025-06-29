@@ -1,0 +1,41 @@
+// Import Bootstrap's SCSS and override color variables using @use ... with
+@use 'bootstrap/scss/bootstrap' with (
+	$primary: #313daa,
+	$secondary: #6c757d,
+  $success: #28a745,
+  $danger: #dc3545
+);
+
+/* Off canvas */
+.offcanvas.offcanvas-end {
+    width: 275px;
+}
+
+/* Logout button: visibility navbar and canvas*/
+.logout-button-navbar {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.logout-button-canvas {
+    margin-left: 0;
+    display: none;
+}
+
+@media only screen and (max-width: 992px) {
+	.logout-button-navbar {
+			margin-left: 10px;
+			display: none;
+	}
+
+	.logout-button-canvas {
+			margin-left: 0;
+			display: block;
+	}
+}
+
+/* Auth Forms */
+.auth-form {
+	width: 400px;
+	margin: 60px auto 0px auto;
+}
