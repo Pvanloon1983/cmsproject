@@ -50,6 +50,7 @@
                                     route('contact')
                                     }}">Contact</a>
                             </li>
+                            @guest
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}" {{
                                     request()->routeIs('register') ? 'aria-current="page"' : '' }} href="{{
@@ -60,7 +61,10 @@
                                     request()->routeIs('login') ? 'aria-current="page"' : '' }} href="{{ route('login')
                                     }}">Login</a>
                             </li>
+                            @endguest
+
                         </ul>
+                        @auth
                         <form class="logout-button-navbar" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="btn btn-primary" type="submit">Logout</button>
@@ -69,6 +73,8 @@
                             @csrf
                             <button class="btn btn-primary" type="submit">Logout</button>
                         </form>
+                        @endauth
+
                     </div>
                 </div>
 

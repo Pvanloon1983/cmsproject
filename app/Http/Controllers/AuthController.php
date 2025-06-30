@@ -59,7 +59,7 @@ class AuthController extends Controller
             'password.required' => 'Wachtwoord is verplicht.',
         ]);
 
-        if (auth()->attempt($validated)) {
+        if (auth()->attempt($validated, $request->filled('remember'))) {
             $request->session()->regenerate();
             return redirect()->route('dashboard')->with('success', 'Je bent ingelogd!');
         }
@@ -67,9 +67,14 @@ class AuthController extends Controller
         return back()->with('error', 'De inloggevens kloppen niet.');
     }
 
+    public function logoutGet () {
+         return redirect()->route('home');
+    }
 
     public function logout() {
         auth()->logout();
         return redirect()->route('login')->with('success', 'Je bent uitgelogd.');
     }
+
+
 }

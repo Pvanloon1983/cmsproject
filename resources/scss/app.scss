@@ -39,3 +39,17 @@
 	width: 400px;
 	margin: 60px auto 0px auto;
 }
+
+/* Alert close button  */
+.alert-dismissible .btn-close  {
+	width: 0.75em;
+	height: 0.75em;
+	padding: 1.50rem 1rem;
+	font-size: 0.75rem;
+}
+
+/* Dashboard Alert */
+.dashboard-alert {
+	margin-top: 20px;
+	max-width: 200px;
+}
