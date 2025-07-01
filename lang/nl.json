@@ -51,5 +51,7 @@
     "Email": "E-mail",
     "Password": "Wachtwoord",
     "Confirm Password": "Bevestig Wachtwoord",
-    "Submit": "Verzenden"
+    "Remember Me": "Vergeet mij niet",
+    "Submit": "Verzenden",
+    "Forgot Password": "Wachtwoord Vergeten"
 }

@@ -36,8 +36,32 @@
 
 /* Auth Forms */
 .auth-form {
-	width: 400px;
+	max-width: 400px;
 	margin: 60px auto 0px auto;
+}
+
+.form-title {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+	.form-title {
+	font-size: 40px;
+	margin-bottom: 20px;
+	}
+}
+
+/* Login form */
+.remember-me-forgot {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Register form */
+.submit-login {
+	display: flex;
+	justify-content: space-between;
 }
 
 /* Alert close button  */

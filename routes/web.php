@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ForgotPasswordController;
 
 // Pages
 Route::get('/', [PagesController::class, 'home'])->name('home');
@@ -20,6 +21,14 @@ Route::post('/login', [AuthController::class, 'loginUser'])->middleware('guest')
 
 Route::get('/logout', [AuthController::class, 'logoutGet'])->name('logout_get');
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
+// Forgot password
+Route::get('/forgot-password', [ForgotPasswordController::class, 'forgotPassword'])->middleware('guest')->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendPasswordResetLink'])
+    ->middleware(['guest', 'throttle:3,1'])
+    ->name('password.email');
+Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'handlingPasswordResetToken'])->middleware('guest')->name('password.reset');
+Route::post('/reset-password', [ForgotPasswordController::class, 'changePasswordSubmit'])->middleware('guest')->name('password.update');
 
 // Dashboard
 Route::get('/dashboard', function () {
