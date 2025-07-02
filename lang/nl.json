@@ -53,5 +53,11 @@
     "Confirm Password": "Bevestig Wachtwoord",
     "Remember Me": "Vergeet mij niet",
     "Submit": "Verzenden",
-    "Forgot Password": "Wachtwoord Vergeten"
+    "Forgot Password": "Wachtwoord Vergeten",
+    "Please check your email and click the verification link to activate your account.": "Controleer je e-mail en klik op de verificatielink om je account te activeren.",
+    "Didn’t receive the email?": "E-mail niet ontvangen?",
+    "Check your spam folder": "Controleer je spamfolder",
+    " or": " of",
+    "click here to resend the email": "klik hier om de e-mail opnieuw te verzenden",
+    "Verification link sent!": "Verificatielink verzonden!"
 }
