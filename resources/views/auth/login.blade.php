@@ -2,32 +2,14 @@
 	<main>
 		<section class="container">
 			<form class="auth-form" action="{{ route('login_store') }}" method="POST">
-				<h1 class="form-title">{{ __('Login') }}</h1>
+				<h3 class="form-title">{{ __('Login') }}</h3>
 				@csrf
-				@if(session('success'))
-				<div class="alert alert-success alert-dismissible fade show" role="alert">
-					{{ session('success') }}
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-				@endif
-				@if(session('error'))
-				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					{{ session('error') }}
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-				@endif
-				@if (session('status'))
-				<div class="alert alert-success alert-dismissible fade show" role="alert">
-					{{ session('status') }}
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-				@endif
-				@if ($errors->has('email'))
-				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					{{ $errors->first('email') }}
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-				@endif
+
+				<x-alert type="success" session="status" />
+				<x-alert type="success" session="success" />
+				<x-alert type="danger" session="error" />
+				<x-alert type="danger" error="email_forgotpassword" />
+
 				<div class="mb-3">
 					<label for="email" class="form-label">{{ __('Email') }}</label>
 					<input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
@@ -56,7 +38,10 @@
 						<span><a href="{{ route('password.request') }}">{{ __('Forgot Password') }}</a></span>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+				<button type="submit" class="btn btn-primary">
+					<span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+					<span class="btn-text">{{ __('Submit') }}</span>
+				</button>
 			</form>
 
 		</section>

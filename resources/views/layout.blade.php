@@ -67,11 +67,17 @@
                         @auth
                         <form class="logout-button-navbar" action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button class="btn btn-primary" type="submit">Logout</button>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                <span class="btn-text">{{ __('Logout') }}</span>
+                            </button>
                         </form>
                         <form class="logout-button-canvas" action="{{ route('logout') }}" mehtod="POST">
                             @csrf
-                            <button class="btn btn-primary" type="submit">Logout</button>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                <span class="btn-text">{{ __('Logout') }}</span>
+                            </button>
                         </form>
                         @endauth
 

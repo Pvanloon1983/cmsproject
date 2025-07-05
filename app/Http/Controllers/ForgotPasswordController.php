@@ -24,7 +24,7 @@ class ForgotPasswordController extends Controller
  
         return $status === Password::ResetLinkSent
             ? back()->with(['status' => __($status)])
-            : back()->withErrors(['email' => __($status)]);
+            : back()->withErrors(['email_forgotpassword' => __($status)])->withInput();
     }
 
     public function handlingPasswordResetToken(Request $request, string $token) {
@@ -56,6 +56,6 @@ class ForgotPasswordController extends Controller
     
         return $status === Password::PasswordReset
             ? redirect()->route('login')->with('status', __($status))
-            : back()->withErrors(['email' => [__($status)]]);
+            : back()->withErrors(['email_forgotpassword' => [__($status)]]);
     }
 }

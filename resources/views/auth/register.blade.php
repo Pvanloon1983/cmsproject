@@ -2,7 +2,7 @@
 	<main>
 		<section class="container">
 			<form class="auth-form" action="{{ route('register_store') }}" method="POST">
-				<h1 class="form-title">{{ __('Register') }}</h1>
+				<h3 class="form-title">{{ __('Register') }}</h3>
 				@csrf
 				<div class="mb-3">
 					<label for="first_name" class="form-label">{{ __('First Name') }}</label>
@@ -55,7 +55,10 @@
 					@enderror
 				</div>	
 				<div class="submit-login">	
-					<button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+					<button type="submit" class="btn btn-primary">
+						<span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+						<span class="btn-text">{{ __('Submit') }}</span>
+					</button>
 					<span class="login-link"><a href="{{ route('login') }}">{{ __('Login') }}</a></span>
 				</div>
 			</form>
