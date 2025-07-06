@@ -1,7 +1,7 @@
-<x-layout title="Home">
+<x-guest-layout title="Home">
 	<main>
 		<section class="container">
 			Home
 		</section>
 	</main>
-</x-layout>
+</x-guest-layout>

@@ -1,4 +1,4 @@
-<x-layout>
+<x-guest-layout>
     <main>
         <section class="container">
 						<div class="email-verification">
@@ -16,4 +16,4 @@
 						</div>
         </section>
     </main>
-</x-layout>
+</x-guest-layout>

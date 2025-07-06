@@ -1,10 +1,9 @@
-<x-layout title="Dashboard">
-	<main>
-		<section class="container">
+<x-dashboard-layout title="Dashboard">
 
-			<x-alert type="success" session="success" />
+	<div class="container-fluid p-3">
+		<div class="mb-3 text-center">
+			<h3>Welcome {{ $user->first_name }}</h3>
+		</div>
+	</div>
 
-			Dashboard
-		</section>
-	</main>
-</x-layout>
+</x-dashboard-layout>

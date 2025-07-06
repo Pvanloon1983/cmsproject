@@ -1,7 +1,7 @@
-<x-layout>
+<x-guest-layout>
 	<main>
 		<section class="container">
 			About
 		</section>
 	</main>
-</x-layout>
+</x-guest-layout>
