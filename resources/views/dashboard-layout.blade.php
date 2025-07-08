@@ -27,7 +27,7 @@
             <ul class="sidebar-nav p-0">
                 <li class="sidebar-header">Tools</li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{ route('profile.edit')}}" class="sidebar-link">
                         <i class="fa-solid fa-user"></i>
                         <span>Profile</span>
                     </a>
@@ -92,7 +92,7 @@
                 <ul class="sidebar-nav p-0">
                     <li class="sidebar-header">Tools</li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="{{ route('profile.edit') }}" class="sidebar-link">
                             <i class="fa-solid fa-user"></i>
                             <span>Profile</span>
                         </a>

@@ -192,3 +192,14 @@ a.sidebar-link:hover {
 .offcanvas-header {
 	padding-bottom: 0px;
 }
+
+/* Profile page */
+.form-profile {
+	max-width: 400px;
+}
+
+@media (max-width:992px) {
+	.form-profile {
+		max-width: 100%;
+	}
+}
