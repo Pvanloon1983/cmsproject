@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . '/pages.php';
+include __DIR__ . '/blog.php';
 include __DIR__ . '/contactform.php';
 include __DIR__ . '/auth.php';
 include __DIR__ . '/emailverify.php';

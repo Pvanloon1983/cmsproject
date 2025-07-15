@@ -33,11 +33,12 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{ route('blogposts') }}" class="sidebar-link">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span>Blog posts</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <i class="fa-solid fa-list"></i>
@@ -98,7 +99,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="{{ route('blogposts') }}" class="sidebar-link">
                             <i class="fa-solid fa-pen-to-square"></i>
                             <span>Blog posts</span>
                         </a>

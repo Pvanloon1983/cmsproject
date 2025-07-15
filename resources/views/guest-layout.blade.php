@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }} | CMS Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -41,6 +43,11 @@
                                     }}">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('blog') ? 'active' : '' }}" {{
+                                    request()->routeIs('blog') ? 'aria-current="page"' : '' }} href="{{ route('blog')
+                                    }}">Blog</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" {{
                                     request()->routeIs('about') ? 'aria-current="page"' : '' }} href="{{ route('about')
                                     }}">About</a>
@@ -69,14 +76,16 @@
                         <form class="logout-button-navbar" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary">
-                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                <span class="spinner-border spinner-border-sm d-none" role="status"
+                                    aria-hidden="true"></span>
                                 <span class="btn-text">{{ __('Logout') }}</span>
                             </button>
                         </form>
                         <form class="logout-button-canvas" action="{{ route('logout') }}" mehtod="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary">
-                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                <span class="spinner-border spinner-border-sm d-none" role="status"
+                                    aria-hidden="true"></span>
                                 <span class="btn-text">{{ __('Logout') }}</span>
                             </button>
                         </form>
