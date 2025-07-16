@@ -83,9 +83,11 @@
         </aside>
 
         {{-- Offcanvas sidebar for mobile --}}
-        <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+        <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileSidebar"
+            aria-labelledby="mobileSidebarLabel">
             <div class="offcanvas-header">
-                <button type="button" class="btn btn-link text-white p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+                <button type="button" class="btn btn-link text-white p-0 ms-auto" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -117,7 +119,8 @@
                             <i class="fa-solid fa-shield"></i>
                             <span>Auth</span>
                         </a>
-                        <ul id="authMobile" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#mobileSidebar">
+                        <ul id="authMobile" class="sidebar-dropdown list-unstyled collapse"
+                            data-bs-parent="#mobileSidebar">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">Login</a>
                             </li>
@@ -153,7 +156,8 @@
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container">
                         {{-- Sidebar toggler for mobile --}}
-                        <button class="toggler-btn d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+                        <button class="toggler-btn d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
                             <i class="fa-solid fa-align-left"></i>
                         </button>
                         <a class="navbar-brand" href="#">CMS Project</a>
@@ -178,6 +182,12 @@
                                             }}">Home</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('blog') ? 'active' : '' }}" {{
+                                            request()->routeIs('blog') ? 'aria-current="page"' : '' }} href="{{
+                                            route('blog')
+                                            }}">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" {{
                                             request()->routeIs('about') ? 'aria-current="page"' : '' }} href="{{
                                             route('about')
@@ -189,6 +199,14 @@
                                             route('contact')
                                             }}">Contact</a>
                                     </li>
+                                    @auth
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" {{
+                                            request()->routeIs('dashboard') ? 'aria-current="page"' : '' }} href="{{
+                                            route('dashboard')
+                                            }}">Dashboard</a>
+                                    </li>
+                                    @endauth
                                     @guest
                                     <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}" {{

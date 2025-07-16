@@ -12,7 +12,7 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        $blogPosts = BlogPost::with('user')->paginate(8);
+        $blogPosts = BlogPost::with('user')->paginate(10);
 
         return view('blog.dash-index', ['blogposts' => $blogPosts]);
     }
@@ -22,7 +22,7 @@ class BlogPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.create');
     }
 
     /**

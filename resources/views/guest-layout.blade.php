@@ -58,6 +58,14 @@
                                     route('contact')
                                     }}">Contact</a>
                             </li>
+                            @auth
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" {{
+                                    request()->routeIs('dashboard') ? 'aria-current="page"' : '' }} href="{{
+                                    route('dashboard')
+                                    }}">Dashboard</a>
+                            </li>
+                            @endauth
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}" {{
